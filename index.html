@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item, index in items" v-on:click="dodo(item.message)">
+        {{index}} {{item.message}}
+      </li>
+    </ul>
+    <p>{{msg}}</p>
+    <div
+      v-bind="[ ]"
+      :style="{ color: color, background: isGreen ? bgColor0 : bgColor1 }"
+    >{{rawHtml}}</div>
+    <div v-html="rawHtml" v-if="show" v-bind:class="colorToggle" v-on:click="toggle()"></div>
+  </div>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        items: [{
+            message: 'Foo'
+          },
+          {
+            message: 'Bar'
+          } 
+        ], 
+        msg: 'hi Vue!',
+        rawHtml: '<span style="color:red">this should be red!</span>',
+        colorToggle: 'yellow',
+        show: true,
+        color: "green",
+        isGreen: false,
+        bgColor0: "black",
+        bgColor1: "yellow"  
+      },
+      methods:{
+        dodo: function(e) {
+          if(e)
+          alert(e)
+          else
+          alert("helloooooo")
+        },
+
+        toggle: function() {
+          colorToggle = show ? "blue" : "yellow" ;
+          show = !show
+        }
+      }
+    })
+    app.dodo(123)
+    app.msg="hi..."
+  </script>
+  <style>
+    .blue {
+      color: blue
+    }
+
+    .yellow {
+      color: yellow
+    }
+  </style>
+</body>
+
+</html> 
