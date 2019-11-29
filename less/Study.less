@@ -1,0 +1,63 @@
+@direction: -bottom;
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #666;
+
+.foo (@bg: #000000, @color: rgb(255, 132, 0)) {
+  //命名参数，也可以不命名，但是混入时要注意参数顺序
+  background: @bg;
+  color: @color;
+}
+
+.app {
+  background: @light-blue;
+  height: 900px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .box {
+    @boxWidth: 150px;
+    @boxHeight: 250px;
+    width: @boxWidth + 50;
+    height: @boxHeight - 50; //运算符两侧要有空格
+    background: darken(lighten(#000, 50%), 30%); //颜色变深变浅函数
+    margin: auto;
+    color: aqua;
+    display: flex;
+    text-align: center;
+
+    div {
+      margin@{direction}: auto; //字符串拼接：@{变量名}
+      .foo() !important; //有!important就用!important，没有就用后面的
+      background-color: aqua;
+    }
+
+  }
+  .box1 div::before{
+     content: "This is ";
+     background: yellow;
+     color: #000000;
+     font-weight:bold;
+     border: #f5f5f5 solid 2px;
+     margin-right: 20px;
+  }
+
+  .box1 div::after {
+    content: "...";
+    color: #f5f5f5;
+  }
+}
+
+//CSS中要匹配父元素下面的子元素，父子属性之间带空格或回车，例如.father .son/#father .son/#father #son； 
+//中间没空格或回车会匹配到同时满足两个条件的一个元素；
+// 中间有逗号会匹配到满足条件的多个元素；
+.a.aa {
+  width: 300px;
+  height: 300px;
+  background-color: green;
+}
+
+#b .b {
+  width: 300px;
+  height: 300px;
+  background-color: aqua;
+}

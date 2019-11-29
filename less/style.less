@@ -1,0 +1,54 @@
+@themeColor: bisque;
+@boxColor: yellow;
+@borderColor: black;
+@boxWidth: 300px;
+@boxHeight: 150px;
+@boxBorder: 3px solid @borderColor;
+
+#app {
+  background-color: @themeColor;
+  height: 900px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-evenly;
+  align-items: center;
+
+  h1 {
+    background: #15ce2d;
+    width: 100%;
+    order: 0;
+    flex-grow: 5;
+    flex-basis: 3;
+    flex-shrink: 2;
+    border: @boxBorder;
+    align-self: flex-start
+  }
+
+  div {
+    padding: 0px;
+    width: @boxWidth;
+    height: @boxHeight;
+    background: @boxColor;
+    border: @boxBorder;
+    flex-grow: 1;
+    order: 1;
+  }
+
+  .b05 {
+    height: 300px;
+    order: 1;
+  }
+
+  .b10 {
+    height: 200px;
+    order: 1;
+    flex-grow: 2;
+    flex-shrink: 2;
+  }
+}
+
+h1 {
+  background: #ce8415;
+}
