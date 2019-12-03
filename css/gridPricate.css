@@ -8,8 +8,8 @@
   padding: 10px;
   display: grid;
   background-color: #0088ff;
-  grid-template-rows: repeat(2, [r-start] 100px [r-end]) 100px;
-  grid-template-columns: repeat(2, [c-start] 100px [c-end]) 100px;
+  grid-template-rows: repeat(2, [r-start] 1fr [r-end]) 2fr;
+  grid-template-columns: repeat(2, [c-start] 1fr [c-end]) 2fr;
   gap: 10px;
   margin: 0 auto;
 }
@@ -20,7 +20,7 @@
   font-size: 50px;
   font-weight: bold;
 }
-.content1 Í :first-child {
+.content1 :first-child {
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 2;
@@ -45,4 +45,45 @@
   grid-row: 2 / 4;
   grid-column: 1 / 2;
   color: yellowgreen;
+}
+.content2 {
+  width: 50vw;
+  height: 100vh;
+  padding: 10px;
+  display: grid;
+  background-color: #0088ff;
+  gap: 10px;
+  margin: 50px auto;
+  grid-template-areas: "header header" "nav main" "footer footer";
+}
+.content2 header,
+.content2 nav,
+.content2 main {
+  background-color: #81ffcf;
+  padding: 10px;
+  color: #0088ff;
+  font-size: 40px;
+  font-weight: bold;
+}
+.content2 header {
+  grid-area: header;
+}
+.content2 nav {
+  grid-area: nav;
+}
+.content2 main {
+  grid-area: main;
+}
+.content2 footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.content2 footer div {
+  background-color: #81ffcf;
+  padding: 10px;
+}
+.content2 :first-child {
+  color: red;
 }

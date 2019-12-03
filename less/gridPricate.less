@@ -11,8 +11,8 @@
   padding: 10px;
   display: grid;
   background-color: @bgColor;
-  grid-template-rows: repeat(2, [r-start] 100px [r-end]) 100px; //命名横向网格线
-  grid-template-columns: repeat(2, [c-start] 100px [c-end]) 100px; //命名纵向网格线
+  grid-template-rows: repeat(2, [r-start] 1fr [r-end]) 2fr; //命名横向网格线
+  grid-template-columns: repeat(2, [c-start] 1fr [c-end]) 2fr; //命名纵向网格线
   gap: 10px;
   margin: 0 auto;
 
@@ -25,7 +25,7 @@
     font-weight: bold;
 
   }
-Í
+
   :first-child {
     grid-row-start: 2;
     grid-row-end: 3;
@@ -66,4 +66,61 @@
   }
 
 
+}
+
+.content2 {
+  @bgColor: #0088ff;
+  @gdColor: #81ffcf;
+  width: 50vw;//50%视口宽度
+  height: 100vh; //50%视口高度
+  padding: 10px;
+  display: grid;
+  background-color: @bgColor;
+  gap: 10px;
+  margin: 50px auto;
+  // grid-template-rows: 100px 1fr 100px; //命名横向网格线
+  // grid-template-columns: 150px 1fr; //命名纵向网格线
+  grid-template-areas: "header header"
+  "nav main"
+  "footer footer";
+
+  header,
+  nav,
+  main {
+    @textColor: #0088ff;
+    background-color: @gdColor;
+    padding: 10px;
+    color: @textColor;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  nav {
+    grid-area: nav;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    div {
+      @textColor: #0088ff;
+      background-color: @gdColor;
+      padding: 10px;
+    }
+  }
+  :first-child {
+    color: red;
+    // grid-area: ~"2/2/3/3";//区域布局方法一，类似简写的再简化，容器设置不用变
+  }
 }
