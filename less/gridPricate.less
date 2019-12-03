@@ -11,18 +11,59 @@
   padding: 10px;
   display: grid;
   background-color: @bgColor;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, [r-start] 100px [r-end]) 100px; //命名横向网格线
+  grid-template-columns: repeat(2, [c-start] 100px [c-end]) 100px; //命名纵向网格线
   gap: 10px;
+  margin: 0 auto;
+
   .grid {
-    @textColor: #ff6f00;
+    @textColor: #0088ff;
     background-color: @gdColor;
     padding: 10px;
-    grid-row: repeat(3, 2fr);
-    grid-column: 1fr;
     color: @textColor;
     font-size: 50px;
     font-weight: bold;
-    
+
   }
+Í
+  :first-child {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    color: red;
+  }
+
+  //可以改变目标格子的大小以及位置（根据格栅编号）
+
+  :last-child {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    color: red;
+  }
+
+  //可以改变目标格子的大小以及位置，而且可以重叠，目前1和9重叠了（根据格栅编号，也可以通过格栅固定命名方式）
+  //后面的格子默认顶层显示（目前显示的是GRID9）
+
+  :nth-child(3) {
+    grid-row-start: r-start 1;
+    grid-row-end: r-end 1;
+    grid-column-start: c-start 1;
+    grid-column-end: c-end 1;
+    grid-column-end: span 2; //可以通过span设置格子大小，默认是1
+  }
+
+  //根据网格线命名定位
+
+  :nth-child(6) {
+    grid-row: ~ "2 / 4";
+    grid-column: ~ "1 / 2";
+    color: yellowgreen;
+    //简写（推荐）
+    //注意：Less会把“/”看为除号，要用~“ ”包住，避免编译
+  }
+
+
 }
