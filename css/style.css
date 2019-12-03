@@ -11,11 +11,12 @@
 #app h1 {
   background: #15ce2d;
   width: 100%;
-  order: 1;
+  order: 0;
   flex-grow: 5;
   flex-basis: 3;
   flex-shrink: 2;
   border: 3px solid black;
+  align-self: flex-start;
 }
 #app div {
   padding: 0px;
@@ -35,4 +36,7 @@
   order: 1;
   flex-grow: 2;
   flex-shrink: 2;
+}
+h1 {
+  background: #ce8415;
 }

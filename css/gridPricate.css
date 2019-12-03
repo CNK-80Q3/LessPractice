@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.content1 {
+  width: 920px;
+  height: 920px;
+  padding: 10px;
+  display: grid;
+  background-color: #0088ff;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.content1 .grid {
+  background-color: #81ffcf;
+  padding: 10px;
+  grid-row: repeat(3, 2fr);
+  grid-column: 1fr;
+  color: #ff6f00;
+  font-size: 50px;
+  font-weight: bold;
+}

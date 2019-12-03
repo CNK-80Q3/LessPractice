@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.content1 {
+  @bgColor: #0088ff;
+  @gdColor: #81ffcf;
+  width: 920px;
+  height: 920px;
+  padding: 10px;
+  display: grid;
+  background-color: @bgColor;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  .grid {
+    @textColor: #ff6f00;
+    background-color: @gdColor;
+    padding: 10px;
+    grid-row: repeat(3, 2fr);
+    grid-column: 1fr;
+    color: @textColor;
+    font-size: 50px;
+    font-weight: bold;
+    
+  }
+}
