@@ -47,8 +47,8 @@
   color: yellowgreen;
 }
 .content2 {
-  width: 50vw;
-  height: 100vh;
+  width: 920px;
+  height: 920px;
   padding: 10px;
   display: grid;
   background-color: #0088ff;
@@ -79,11 +79,22 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  width: 900px;
+  height: 170px;
+  justify-items: stretch;
+  align-items: stretch;
+  background-color: antiquewhite;
+  padding: 10px;
 }
 .content2 footer div {
   background-color: #81ffcf;
   padding: 10px;
 }
-.content2 :first-child {
+.content2 footer :first-child {
   color: red;
+  justify-self: start;
+  align-self: end;
+}
+.content2 footer :nth-child(3) {
+  place-self: start end;
 }

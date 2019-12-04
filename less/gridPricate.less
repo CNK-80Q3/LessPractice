@@ -71,8 +71,8 @@
 .content2 {
   @bgColor: #0088ff;
   @gdColor: #81ffcf;
-  width: 50vw;//50%视口宽度
-  height: 100vh; //50%视口高度
+  width: 920px; //50%视口宽度
+  height: 920px; //50%视口高度
   padding: 10px;
   display: grid;
   background-color: @bgColor;
@@ -81,8 +81,9 @@
   // grid-template-rows: 100px 1fr 100px; //命名横向网格线
   // grid-template-columns: 150px 1fr; //命名纵向网格线
   grid-template-areas: "header header"
-  "nav main"
-  "footer footer";
+    "nav main"
+    "footer footer";
+  // grid-auto-flow: row dense;//栅格流动处理机制
 
   header,
   nav,
@@ -112,15 +113,35 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    width: 900px;
+    height: 170px;
+    // justify-content: space-evenly;
+    // align-content: center;//栅格总体控制对齐
+    // place-content: stretch stretch;//简写
+    justify-items: stretch;
+    align-items: stretch; //栅格内元素总体控制对齐
+    // place-items: stretch stretch;//简写
+    background-color: antiquewhite;
+    padding: 10px;
 
     div {
       @textColor: #0088ff;
       background-color: @gdColor;
       padding: 10px;
     }
+
+    :first-child {
+      color: red;
+      // grid-area: ~"2/2/3/3";//区域布局方法一，类似简写的再简化，容器设置相同
+      justify-self: start;
+      align-self: end; //特定栅格独立控制对齐
+    }
+
+    :nth-child(3) {
+      place-self: start end;//简写
+    }
   }
-  :first-child {
-    color: red;
-    // grid-area: ~"2/2/3/3";//区域布局方法一，类似简写的再简化，容器设置不用变
-  }
+
+
+
 }
