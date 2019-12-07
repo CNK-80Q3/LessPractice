@@ -1,0 +1,39 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+// 传统布局
+// main {
+//   position: relative;
+//   height: 100vh;
+//   nav {
+//     width:80px;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     bottom: 0;
+//     background-color: aquamarine;
+//   }
+
+//   article {
+//     background-color: bisque;
+//     padding-left: 90px;
+//     background-clip: content-box;
+//     height: 100vh;
+//   }
+// }
+
+//弹性盒模型布局
+main {
+  display: flex;
+  flex-direction: row;
+
+  nav {
+    width: 80px;
+    height: 100vh;
+    background-color: aquamarine;
+  }
+
+  article {
+    background-color: green;
+    color: #fff;
+    flex: 1;
+  }
+}
