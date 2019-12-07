@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+  height: 100vh;
+}
+body main {
+  background-color: #ddd;
+  flex: 1;
+}
+body footer {
+  display: flex;
+  background: linear-gradient(to bottom, #f3f3f3, #ddd, #f3f3f3);
+  border-top: solid 1px #f3f3f3;
+  height: 50px;
+}
+body footer div {
+  flex: 1;
+  height: 100%;
+  text-align: center;
+  line-height: 3em;
+  color: #555;
+}
+body footer div:nth-child(n+2) {
+  border-left: solid 1px #f3f3f3;
+}

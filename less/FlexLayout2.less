@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//常规布局
+// main {
+//   height: 100vh;
+//   background-color: #dddddd;
+// }
+
+// footer {
+//   position: fixed;
+//   width: 100vw;
+//   bottom: 0;
+//   border-top: solid 1px #f3f3f3;
+//   height: 50px;
+//   background: linear-gradient(to bottom, #f3f3f3, #ddd, #f3f3f3);
+  
+//   div {
+//     float: left;
+//     width: 33%;
+//     height: 100%;
+//     text-align: center;
+//     line-height: 3em;
+//     color: #555;
+//   }
+//   div:nth-child(n+2) {
+//     border-left: solid 1px #f3f3f3;
+//   }
+// }
+
+//Flex布局(再添加footer里的内容也可以自适应）
+body {
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+  height: 100vh;
+
+  main {
+    background-color: #ddd;
+    flex:1;
+  }
+
+    footer {
+      display: flex;
+      background: linear-gradient(to bottom, #f3f3f3, #ddd, #f3f3f3);
+      border-top: solid 1px #f3f3f3;
+      height: 50px;
+      
+      div {
+        flex:1;
+        height: 100%;
+        text-align: center;
+        line-height: 3em;
+        color: #555;
+      }
+
+      div:nth-child(n+2) {
+        border-left: solid 1px #f3f3f3;
+      }
+    }
+  
+}
