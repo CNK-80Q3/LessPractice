@@ -3,8 +3,6 @@
   padding: 0;
 }
 .content1 {
-  width: 920px;
-  height: 920px;
   padding: 10px;
   display: grid;
   background-color: #0088ff;
@@ -47,13 +45,13 @@
   color: yellowgreen;
 }
 .content2 {
-  width: 920px;
-  height: 920px;
+  width: 100vw;
+  height: 100vh;
   padding: 10px;
   display: grid;
   background-color: #0088ff;
   gap: 10px;
-  margin: 50px auto;
+  margin: 100px auto;
   grid-template-areas: "header header" "nav main" "footer footer";
 }
 .content2 header,
@@ -79,8 +77,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  width: 900px;
-  height: 170px;
   justify-items: stretch;
   align-items: stretch;
   background-color: antiquewhite;
